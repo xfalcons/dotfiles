@@ -79,7 +79,7 @@ if executable('ag')
 endif
 
 " Color scheme
-colorscheme github
+colorscheme candycode
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
@@ -152,6 +152,47 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Always use vertical diffs
 set diffopt+=vertical
+
+"---------------------------------------------------------------------------
+" ENCODING SETTINGS
+"---------------------------------------------------------------------------
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
+
+fun! ViewUTF8()
+        set encoding=utf-8
+        set termencoding=big5
+endfun
+
+fun! UTF8()
+        set encoding=utf-8
+        set termencoding=big5
+        set fileencoding=utf-8
+        set fileencodings=ucs-bom,big5,utf-8,latin1
+endfun
+
+fun! Big5()
+        set encoding=big5
+        set fileencoding=big5
+endfun
+
+" Syntax highlight for vimdiff
+highlight DiffAdd term=reverse cterm=bold ctermbg=green ctermfg=black
+highlight DiffChange term=reverse cterm=bold ctermbg=cyan ctermfg=black
+highlight DiffText term=reverse cterm=bold ctermbg=gray ctermfg=black
+highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
+
+" Syntax highlight.
+" syntax on
+hi Comment term=standout cterm=bold ctermfg=0
+highlight Search term=reverse ctermbg=3 ctermfg=0
+highlight Normal ctermbg=black ctermfg=white
+highlight Folded ctermbg=black ctermfg=darkcyan
+hi Cursor ctermbg=Gray ctermfg=Blue
+highlight clear SpellBad
+highlight SpellBad term=underline cterm=underline ctermfg=red
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")

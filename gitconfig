@@ -42,6 +42,6 @@
   template = ~/.gitmessage
 [fetch]
   prune = true
-[user]
-	name = Kevin Luo
-	email = kevin_luo@miiicasa.com
+#[diff]
+#  color = auto
+#  external = ~/dotfiles/bin/git_diff_wrapper
