@@ -36,12 +36,18 @@
   autocrlf = input
 [merge]
   ff = only
+  tool = vimdiff
+  conflictstyle = diff3
+[mergetool]
+  prompt = false
 [include]
   path = .gitconfig.local
 [commit]
   template = ~/.gitmessage
 [fetch]
   prune = true
-#[diff]
-#  color = auto
-#  external = ~/dotfiles/bin/git_diff_wrapper
+[diff]
+  color = auto
+  tool = vimdiff
+[difftool]
+	prompt = false
